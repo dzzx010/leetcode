@@ -17,7 +17,23 @@
  * @return {ListNode}
  */
 var deleteDuplicates = function(head) {
-
+    let val = []
+    let temp = head
+    let pro = {}
+    while(temp){
+        if(val.indexOf(temp.val)>-1){
+            pro.next = temp.next
+        } else {
+            pro = temp
+            val.push(temp.val)
+        }
+        if(temp.next == null){
+            break
+        } else {
+            temp = temp.next
+        }
+    }
+    return head
 };
 // @lc code=end
 
